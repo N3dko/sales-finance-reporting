@@ -46,7 +46,7 @@ price. Revenue queries use `unit_price`.
 
 ### Sales performance — full practice dataset
 
-![Sales performance dashboard using the larger practice dataset](screenshots/sales_performance_practice.png)
+![Sales performance dashboard using the larger practice dataset](sales_performance_practice.png)
 
 This first page uses the working database's larger practice dataset. Its
 1,536 dated orders shown in the selected range and approximately 454K revenue
@@ -55,11 +55,11 @@ not have item or payment detail and are excluded from product and finance KPIs.
 
 ### Sales and finance
 
-![Sales and finance dashboard using synthetic data](screenshots/sales_finance_dashboard.png)
+![Sales and finance dashboard using synthetic data](sales_finance_dashboard.png)
 
 ### Product performance
 
-![Product revenue, units sold and daily KPI using synthetic data](screenshots/product_performance_dashboard.png)
+![Product revenue, units sold and daily KPI using synthetic data](product_performance_dashboard.png)
 
 The product KPI shows the last day's revenue (104.80) against an illustrative
 daily target of 100. The generated daily pattern is deliberately repetitive;
