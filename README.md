@@ -42,6 +42,29 @@ The six product groups total 62 units. `unit_price` on `order_items` records
 the price at purchase; `current_price` on `products` is the current catalog
 price. Revenue queries use `unit_price`.
 
+## Dashboard previews
+
+### Sales performance — full practice dataset
+
+![Sales performance dashboard using the larger practice dataset](screenshots/sales_performance_practice.png)
+
+This first page uses the working database's larger practice dataset. Its
+1,536 dated orders shown in the selected range and approximately 454K revenue
+cannot be reproduced from the 31-order public seed alone. The older orders do
+not have item or payment detail and are excluded from product and finance KPIs.
+
+### Sales and finance
+
+![Sales and finance dashboard using synthetic data](screenshots/sales_finance_dashboard.png)
+
+### Product performance
+
+![Product revenue, units sold and daily KPI using synthetic data](screenshots/product_performance_dashboard.png)
+
+The product KPI shows the last day's revenue (104.80) against an illustrative
+daily target of 100. The generated daily pattern is deliberately repetitive;
+it is a feature demonstration, not a forecast or business trend.
+
 ## Reporting model
 
 `customers` → `orders` → `order_items` ← `products`; `payments` also links
@@ -50,8 +73,9 @@ separately, then joins the totals to each order. This prevents payment and item
 rows from multiplying each other. An order with no payment record has a NULL
 collected total, rather than being labeled unpaid.
 
-The Power BI report was built separately: **Sales & Finance — Synthetic Demo**
-and **Product Performance — Synthetic Demo**. A calendar table is created in
+The Power BI report was built separately: **Sales Performance**,
+**Sales & Finance — Synthetic Demo**, and **Product Performance**.
+A calendar table is created in
 Power BI, so it does not appear in the PostgreSQL schema. Apply a page filter
 for `data_origin = demo_generated` when connecting a report to the original
 practice database. The `.pbix` report and screenshots can be added once they
