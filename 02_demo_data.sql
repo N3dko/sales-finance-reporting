@@ -1,8 +1,8 @@
 -- Project CV | reproducible synthetic demo data
 -- Run after 01_schema.sql in a NEW, EMPTY database.
 -- The production/practice database's 1,506 legacy rows are intentionally excluded.
--- This recreates the verified demo totals; customer assignments and payment
--- methods for generated orders are illustrative.
+-- This recreates the verified demo totals and revenue by customer.
+-- Payment method for generated orders is illustrative.
 
 INSERT INTO public.customers (customer_id, customer_name)
 VALUES (1, 'Anna'), (2, 'George'), (3, 'Maria'),
@@ -23,7 +23,7 @@ VALUES (1507, 1, 113.90, DATE '2026-10-01', 'demo_generated');
 -- Thirty further orders, one per day: one mouse plus a rotating second product.
 INSERT INTO public.orders (order_id, customer_id, amount, order_date, data_origin)
 SELECT 1508 + day_no,
-       1 + ((day_no + 1) % 5),
+       1 + (day_no % 5),
        (24.90 + p.current_price)::numeric(10,2),
        DATE '2026-10-01' + day_no,
        'demo_generated'

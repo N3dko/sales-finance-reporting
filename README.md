@@ -61,6 +61,6 @@ have been exported and checked for connection details.
 
 The working database also includes 1,506 older practice orders without item
 or payment details. They are excluded from this public package. The seed file
-recreates the checked overall demo totals, but illustrative customer assignment
-and payment method may differ from the working database. No server address,
+recreates the checked demo totals and customer revenue; the payment method
+may differ from the working database. No server address,
 account name, or password is required in this repository.
